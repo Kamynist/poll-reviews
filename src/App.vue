@@ -4,6 +4,10 @@
     <router-link to="/about">About</router-link>
   </nav>
   <router-view/>
+  <span style="font-size: 6px;">
+    я знаю что во vuex принято юзать action/mutation, 
+    но так как я сделал проще
+  </span>
 </template>
 
 <style>
@@ -12,6 +16,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  font-size: 16px;
   color: #2c3e50;
 }
 
