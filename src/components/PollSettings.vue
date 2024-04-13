@@ -1,37 +1,11 @@
 <template>
-  <div style=" position: sticky;">
-    <v-card title="Настройки формы">
+    <v-card style="position: sticky;" title="Настройки формы">
       <v-card-text>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
-        <h6>span</h6>
+        <v-input>
+
+        </v-input>
       </v-card-text>
     </v-card>
-  </div>
 </template>
 
 <script>
