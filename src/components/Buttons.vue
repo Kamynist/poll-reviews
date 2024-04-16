@@ -10,9 +10,9 @@
           </v-tooltip>
         </v-btn>
       </div>
-      <v-btn @click="this.$store.dispatch('setId')">
+      <!-- <v-btn @click="this.$store.dispatch('setId')">
         обновить
-      </v-btn>
+      </v-btn> -->
     </v-card>
   </div>
 </template>
@@ -78,8 +78,4 @@ export default {
 </script>
 
 <style scoped>
-.v-card {
-  margin-top: 20px; 
-  width: 230px;
-}
 </style>

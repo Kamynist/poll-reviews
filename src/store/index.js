@@ -4,6 +4,17 @@ export default createStore({
 
   state: {
     questionList: [],
+    polls: [
+      {name: '1'},
+      {name: '1'},
+      {name: '1'},
+      {name: '1'},
+      {name: '1'},
+      {name: '1'},
+      {name: '1'},
+      {name: '1'},
+
+    ],
   },
 
   getters: {
@@ -12,6 +23,9 @@ export default createStore({
   mutations: {
     setQuestion(state, data){
       state.questionList.push(JSON.parse(JSON.stringify(data)))
+    },
+    setPoll(state, data){
+      state.polls.push(JSON.parse(JSON.stringify(data)))
     },
     deleteQuestopn(state, data){
       state.questionList.splice(data, 1)
@@ -33,6 +47,7 @@ export default createStore({
   },
 
   actions: {
+    // for questions poll
     setQuestion({commit}, data){
       commit('setQuestion', data)
       commit('setId')
@@ -40,10 +55,14 @@ export default createStore({
     deleteQuestopn({commit}, data){
       commit('deleteQuestopn', data)
     },
-
     setId({commit}){
       commit('setId')
-    }
+    },
+
+    // for  poll
+    setPoll({commit}, data){
+      commit('setPoll', data)
+    },
   },
 
   modules: {

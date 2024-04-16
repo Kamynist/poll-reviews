@@ -1,12 +1,12 @@
-<template>
+<template >
   <nav>
-    <router-link to="/">Home</router-link> |
+    <router-link to="/">Список</router-link> |
+    <router-link to="/poll">Home</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
   <router-view/>
   <span style="font-size: 6px;">
-    я знаю что во vuex принято юзать action/mutation, 
-    но так как я сделал проще
+    Powered by Aleksey
   </span>
 </template>
 
@@ -16,7 +16,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  width: 1000px;
   font-size: 16px;
+  margin: 0 auto;
   color: #2c3e50;
 }
 

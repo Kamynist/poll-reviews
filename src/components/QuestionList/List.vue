@@ -14,7 +14,6 @@
         <template v-for="(question, id) in $store.state.questionList" :key="id">
           <!-- {{ question }} -->
           <v-sheet @click="showQuest(question)" color="grey-lighten-3">
-            id {{ id }}
             <Comment v-if="question.type == 'comment'" :question="question"/>
             <Select v-if="question.type == 'select'" :question="question" />
           </v-sheet>
@@ -46,8 +45,8 @@
 </template>
 
 <script>
-import Comment from '@/components/List/Comment.vue'
-import Select from '@/components/List/Select.vue'
+import Comment from './Comment.vue'
+import Select from './Select.vue'
 
 export default {
   name: 'List',

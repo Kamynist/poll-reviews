@@ -1,8 +1,8 @@
 <template>
-  <v-container style="position: relative;">
+  <v-container style="">
     <div style="position: fixed; top: 7%">
-      <Buttons class="padding-r"/>
-      <PollSettings class="padding-r"/>
+      <Buttons class="my-card padding-r" style="padding-bottom: 30px;"/>
+      <PollSettings class="my-card padding-r"/>
     </div>
     <div style="margin-left: 300px">
       <List class="padding-r"/>
@@ -14,7 +14,7 @@
 <script>
 // @ is an alias to /src
 import Buttons from '@/components/Buttons.vue'
-import List from '@/components/List.vue'
+import List from '@/components/QuestionList/List.vue'
 // import RowEdit from '@/components/RowEdit.vue'
 import PollSettings from '@/components/PollSettings.vue'
 
@@ -35,5 +35,9 @@ export default {
 <style scoped>
 .padding-r{
   padding-right: 20px;
+}
+
+.my-card {
+  width: 240px;
 }
 </style>

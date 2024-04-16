@@ -1,11 +1,11 @@
 <template>
+  <div>
     <v-card style="position: sticky;" title="Настройки формы">
       <v-card-text>
-        <v-input>
-
-        </v-input>
+        <v-text-field style="height: 50px;" label="заголовок"></v-text-field>
       </v-card-text>
     </v-card>
+  </div>
 </template>
 
 <script>
