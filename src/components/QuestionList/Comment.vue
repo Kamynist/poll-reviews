@@ -1,5 +1,5 @@
 <template>
-  <v-sheet @click="showQuest(question)" color="grey-lighten-3">
+  <v-sheet @click="showQuest(question)">
     <div style="display: flex;
       flex-direction: row;
       justify-content: center;

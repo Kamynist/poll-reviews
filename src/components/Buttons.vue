@@ -3,7 +3,7 @@
     <v-card fixed title="Добавить в форму">
       <div v-for="(button, i) in buttonsList" :key="i">
         <v-btn :prepend-icon="button.icon" @click="addQuestion(button)"
-          style="min-width: 165px; margin-bottom: 20px;">
+          style="min-width: 200px; margin-bottom: 20px;">
           {{ button.label }}
           <v-tooltip activator="parent" location="bottom"> 
             {{ tooltipList[i] }}

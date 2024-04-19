@@ -13,7 +13,7 @@
         <!-- $store.state.questionList {{ $store.state.questionList }} -->
         <template v-for="(question, id) in $store.state.questionList" :key="id">
           <!-- {{ question }} -->
-          <v-sheet @click="showQuest(question)" color="grey-lighten-3">
+          <v-sheet @click="showQuest(question)">
             <Comment v-if="question.type == 'comment'" :question="question"/>
             <Select v-if="question.type == 'select'" :question="question" />
           </v-sheet>

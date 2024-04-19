@@ -1,8 +1,8 @@
 <template>
-  <v-container style="">
+  <v-container>
     <div style="position: fixed; top: 7%">
-      <Buttons class="my-card padding-r" style="padding-bottom: 30px;"/>
-      <PollSettings class="my-card padding-r"/>
+      <Buttons class="padding-r" style="padding-bottom: 30px; width: 300px;"/>
+      <PollSettings style="width: 300px;" class="padding-r"/>
     </div>
     <div style="margin-left: 300px">
       <List class="padding-r"/>
@@ -35,9 +35,5 @@ export default {
 <style scoped>
 .padding-r{
   padding-right: 20px;
-}
-
-.my-card {
-  width: 240px;
 }
 </style>
