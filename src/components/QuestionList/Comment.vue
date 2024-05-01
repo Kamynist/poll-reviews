@@ -5,12 +5,6 @@
       justify-content: center;
       align-items: center;">
       <h3 class="text-h5 mb-2 mr-2"> Тип: {{ question.label }}</h3>
-      <util-button>
-        <v-icon size="small" color="red"> mdi-delete </v-icon>
-        <v-tooltip activator="parent" location="bottom"> 
-          Удалить
-        </v-tooltip>
-      </util-button>
 
       <v-btn icon size="small" @click="deleteQuestion(id)"> 
         <v-icon size="small" color="red"> mdi-delete </v-icon>
@@ -74,7 +68,6 @@
 
 <script>
 
-import UtilButton from "@/components/UI/UtilButton.vue";
 export default {
   name: 'Comment',
   props: {
@@ -83,9 +76,6 @@ export default {
   data() {
     return {
     };
-  },
-  components:{
-    UtilButton,
   },
   computed(){
   },
