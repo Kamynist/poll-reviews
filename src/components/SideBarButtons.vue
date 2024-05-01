@@ -2,23 +2,26 @@
   <div>
     <v-card fixed title="Добавить в форму">
       <div v-for="(button, i) in buttonsList" :key="i">
-        <v-btn :prepend-icon="button.icon" @click="addQuestion(button)"
-          style="min-width: 200px; margin-bottom: 20px;">
+        <util-button @click="addQuestion(button)"
+          style="min-width: 200px; margin-bottom: 20px;" :icon="button.icon">
           {{ button.label }}
           <v-tooltip activator="parent" location="bottom"> 
             {{ tooltipList[i] }}
           </v-tooltip>
-        </v-btn>
-      </div>
+        </util-button>
+      </div> 
       <!-- <v-btn @click="this.$store.dispatch('setId')">
         обновить
       </v-btn> -->
     </v-card>
   </div>
 </template>
+
 <script> 
+import UtilButton from "@/components/UI/UtilButton.vue";
+
 export default {
-  name: 'ButtonsList',
+  name: 'si-buttons',
   data() {
     return {
       buttonsList: [
@@ -64,6 +67,9 @@ export default {
         'Отзыв с файлом и комментарием'
       ],
     }
+  },
+  components:{ 
+    UtilButton,
   },
   created() {
     console.log(this.$store.state)
