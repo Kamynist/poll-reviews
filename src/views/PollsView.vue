@@ -4,22 +4,19 @@
       item-title="name"
       item-value="id"
     >
-
     </v-list>
-    bvnvbfg
+    <my-button></my-button>
   </v-card>
 </template>
 
 <script>
 // @ is an alias to /src
 // import List from '@/components/QuestionList/List.vue'
-// import RowEdit from '@/components/RowEdit.vue'
 
 
 export default {
   name: 'PollsView',
   components: {
-    // Buttons, List, PollSettings
   },
   data() {
     return {
