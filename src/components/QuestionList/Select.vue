@@ -6,7 +6,7 @@
       justify-content: center;
       align-items: center;">
       <h3 class="text-h5 mb-2 mr-2"> Тип: {{ question.label }}</h3>
-      <v-btn icon size="small" @click="deleteQuestion(id)"> 
+      <v-btn icon size="small" @click="$emit('someEvent', question)"> 
         <v-icon size="small" color="red"> mdi-delete </v-icon>
         <v-tooltip activator="parent" location="bottom"> 
           Удалить
@@ -67,8 +67,7 @@ export default {
       arr.forEach((f, i)=>{
         f.id = i
       })
-      console.log(arr, this.$store.state.questionList)
-
+      console.log(arr, this.$store.state.sendObj)
     },
     addComment(list){
       list.push({
@@ -82,8 +81,7 @@ export default {
       list.pop()
     },
     deleteQuestion(quest){
-      this.$store.dispatch('deleteQuestopn', quest)
-      // setId(list)
+      this.$store.dispatch('deleteQuestion', quest)
     },
   },
 }

@@ -2,7 +2,6 @@
   <div>
     <v-card fixed title="Добавить в форму">
       <div v-for="(button, i) in buttonsList" :key="i">
-
         <v-btn @click="addQuestion(button)"
           style="min-width: 200px; margin-bottom: 20px;" :prepend-icon="button.icon">
           {{ button.label }}
@@ -11,9 +10,6 @@
           </v-tooltip>
         </v-btn>
       </div> 
-      <!-- <v-btn @click="this.$store.dispatch('setId')">
-        обновить
-      </v-btn> -->
     </v-card>
   </div>
 </template>

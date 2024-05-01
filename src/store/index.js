@@ -1,20 +1,43 @@
 import { createStore } from 'vuex'
+import list from './list'
 
 export default createStore({
-
   state: {
-    questionList: [],
-    polls: [
-      {name: '1'},
-      {name: '1'},
-      {name: '1'},
-      {name: '1'},
-      {name: '1'},
-      {name: '1'},
-      {name: '1'},
-      {name: '1'},
-
-    ],
+    sendObj: {
+      id: "",
+      name: 'Отзыв',
+      type: 'object',
+      colors: [
+        {
+          name: 'main',
+          color: '#e27d60',
+          mode: 'hexa',
+        },
+        {
+          name: 'secondary',
+          color: '#84cdca',
+          mode: 'hexa',
+        },
+        {
+          name: 'third',
+          color: '#e8a87c',
+          mode: 'hexa',
+        },
+        {
+          name: 'fourth',
+          color: '#c38d9e',
+          mode: 'hexa',
+        },
+        {
+          name: 'fifth',
+          color: '#41b3a3',
+          mode: 'hexa',
+        },
+      ],
+      services: [],
+      data: [],
+    },
+    polls: []
   },
 
   getters: {
@@ -22,27 +45,21 @@ export default createStore({
 
   mutations: {
     setQuestion(state, data){
-      state.questionList.push(JSON.parse(JSON.stringify(data)))
+      state.sendObj.data.push(JSON.parse(JSON.stringify(data)))
     },
     setPoll(state, data){
       state.polls.push(JSON.parse(JSON.stringify(data)))
     },
-    deleteQuestopn(state, data){
-      state.questionList.splice(data, 1)
+    deleteQuestion(state, data){
+      state.sendObj.data.splice(data, 1)
     },
     setId(state){
-      for(let f in state.questionList){
-        console.log(';f', f);
+      console.log('setId state', state);
+      for(let f in state.sendObj.data){
         f = {
           label: f.label,
         }
-      
       }
-      // state.questionList.forEach((f, i)=>{
-
-      // })
-
-      console.log(' state.questionList',  state.questionList);
     }
   },
 
@@ -52,8 +69,9 @@ export default createStore({
       commit('setQuestion', data)
       commit('setId')
     },
-    deleteQuestopn({commit}, data){
-      commit('deleteQuestopn', data)
+    deleteQuestion({commit}, data){
+      console.log('data', data)
+      commit('deleteQuestion', data)
     },
     setId({commit}){
       commit('setId')

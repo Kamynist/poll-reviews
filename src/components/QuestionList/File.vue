@@ -30,8 +30,7 @@ export default {
       list.pop()
     },
     deleteQuestion(quest){
-      this.$store.dispatch('deleteQuestopn', quest)
-      // setId(list)
+      this.$store.dispatch('deleteQuestion', quest)
     },
   },
 }

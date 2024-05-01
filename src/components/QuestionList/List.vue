@@ -10,28 +10,26 @@
       </v-toolbar>
 
       <v-card-text>
-        <!-- $store.state.questionList {{ $store.state.questionList }} -->
-        <template v-for="(question, id) in $store.state.questionList" :key="id">
+        <template v-for="(question, id) in $store.state.sendObj.data" :key="id">
           <!-- {{ question }} -->
-          <v-sheet @click="showQuest(question)">
-            <Comment v-if="question.type == 'comment'" :question="question"/>
-            <Select v-if="question.type == 'select'" :question="question" />
+          <v-sheet >
+            <Comment @someEvent="deleteQuestion" v-if="question.type == 'comment'" :question="question"/>
+            <Select @someEvent="deleteQuestion" v-if="question.type == 'select'" :question="question"/>
           </v-sheet>
           <v-divider class="my-2"></v-divider>
 
         </template>
 
       </v-card-text>
-
-      <v-card-tex>
+      <!-- <v-card-tex>
         <v-table>
           thead
         </v-table>
-      </v-card-tex>
+      </v-card-tex> -->
 
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn
+        <v-btn @click="setData"
           color="success"
         >
           Сохранить
@@ -40,7 +38,7 @@
     </v-card>
 
 
-  <!-- $store.state.questionList{{$store.state.questionList}} -->
+  <!-- $store.state.sendObj.data{{$store.state.sendObj.data}} -->
   </div>
 </template>
 
@@ -61,20 +59,6 @@ export default {
   computed(){
   },
   methods: {
-    showQuest(question){
-      let arr = [
-        {id: null},
-        {id: null},
-        {id: null},
-        {id: null},
-        {id: null},
-        {id: null},
-      ]
-      arr.forEach((f, i)=>{
-        f.id = i
-      })
-      console.log(arr, this.$store.state.questionList)
-    },
     addComment(list){
       list.push({
         label: 'заголовок',
@@ -87,8 +71,19 @@ export default {
       list.pop()
     },
     deleteQuestion(quest){
-      this.$store.dispatch('deleteQuestopn', quest)
-      // setId(list)
+      this.$store.dispatch('deleteQuestion', quest)
+    },
+    setData(){
+      let items = JSON.parse(localStorage.getItem('polls'));
+      if(items == null){
+        items = []
+        items.push(this.$store.state.sendObj)
+        localStorage.setItem('polls', JSON.stringify(items))
+        return
+      }
+      items.push(this.$store.state.sendObj)
+      localStorage.setItem('polls', JSON.stringify(items))
+      console.log('getItem', items);
     },
   },
 }

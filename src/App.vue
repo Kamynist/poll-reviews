@@ -1,13 +1,9 @@
 <template >
   <nav>
     <router-link to="/">Список</router-link> |
-    <router-link to="/poll">Home</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
   <router-view/>
-  <span style="font-size: 6px;">
-    Powered by Aleksey
-  </span>
 </template>
 
 <style>
