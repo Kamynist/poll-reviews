@@ -2,7 +2,12 @@
   <div>
     <v-card class="text-center" style="position: sticky;" title="Настройки формы">
       <v-card-text>
-        <v-text-field variant="underlined" class="pb" label="Название окна" v-model="$store.state.sendObj.name"></v-text-field>
+        <v-text-field 
+          variant="underlined" 
+          class="pb" 
+          label="Название окна" 
+          v-model="$store.state.sendObj.name"
+        ></v-text-field>
         <div :style="enableInput ? 'border: solid 2px #f0f0f0; border-radius: 4px' : ''">
           <v-checkbox v-model="enableInput" label="Входящие данные">
             <v-tooltip activator="parent" location="bottom"> 

@@ -37,10 +37,46 @@ export default createStore({
       services: [],
       data: [],
     },
-    polls: []
+
+    polls: [],
+
+    items: [{
+      name: 'Service 1',
+      discribtion: 'Описание сервиса 1',
+      children: [{
+          name: 'Service 1.1',
+          discribtion: 'Описание сервиса 1.1',
+          children: [{
+            name: 'Service 1.1.1',
+            discribtion: 'Описание сервиса 1.1.1',
+          },{
+            name: 'Service 1.1.2',
+            discribtion: 'Описание сервиса 1.1.2',
+          }]
+        }
+      ],
+    },{
+      name: 'Service 2',
+      discribtion: 'Описание сервиса 2',
+      children: [{
+          name: 'Service 2.1',
+          discribtion: 'Описание сервиса 2.1',
+          children: [{
+            name: 'Service 2.1.1',
+            discribtion: 'Описание сервиса 2.1.1',
+          },{
+            name: 'Service 2.1.2',
+            discribtion: 'Описание сервиса 2.1.2',
+          }]
+        }
+      ],
+    }]
   },
 
   getters: {
+    getItems(state){
+      return state.items
+    }
   },
 
   mutations: {

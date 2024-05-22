@@ -13,7 +13,6 @@ const routes = [
     name: 'poll',
     component: PollView
   },
-
   {
     path: '/about',
     name: 'about',
